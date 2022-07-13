@@ -59,9 +59,6 @@ function editarTarefa(event) {
     }
 }
 
-
-qtd_tarefas.innerText = `Quantidade de Tarefas: ${arrayTarefas.length}`;
-
 button.addEventListener("click", adicionarTarefa);
 lista.addEventListener("click", removerTarefa);
 lista.addEventListener("click", editarTarefa);
