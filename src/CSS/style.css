@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+::-webkit-scrollbar {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(62, 42, 243);
+    border-radius: 10px;
+}
+
+body {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/002/099/719/original/mountain-beautiful-landscape-background-design-illustration-free-vector.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    height: 300px;
+    min-width: 60%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-form {
+    background-color: rgb(62, 42, 243);
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+} 
+
+.title p {
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.title h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.section-form .form {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-form .form input {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    width: 80%;
+    height: 40px;
+    padding-left: 10px;
+}
+
+.section-form .form button {
+    background-color: springgreen;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-weight: bold;
+    color: #fff;
+    height: 40px;
+    width: 20%;
+    min-width: 100px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.section-form .form button:hover {
+    box-shadow: 1px 1px 30px springgreen;
+}
+
+.section-list {
+    width: 100%;
+}
+
+.lista-tarefas {
+    height: 300px;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+.tarefa {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.tarefa:hover {
+    background-color: rgb(62, 42, 243);
+    box-shadow: 1px 1px 15px #05e69b;
+    transform: scale(1.01);
+}
+
+.tarefa:hover h4 {
+    color: #fff;
+    font-weight: bold;
+}
+
+.tarefa img {
+    margin: auto;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+}
+
+.tarefa .remover:hover {
+    background-color: red;
+}
+
+.tarefa .editar:hover {
+    background-color: springgreen;
+    border-radius: 50%;
+}
+
+.tarefa h4 {
+    color: #000;
+    text-align: left;
+    width: 70%;
+    word-wrap: break-word;
+}
