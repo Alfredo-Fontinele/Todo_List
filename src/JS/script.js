@@ -5,11 +5,12 @@ const qtd_tarefas = document.getElementById("quantidade_tarefas");
 
 button.addEventListener("click", adicionarTarefa);
 
-const arrayTarefas = JSON.parse(localStorage.getItem(lista));
+const arrayTarefas = [];
+// const arrayTarefas = JSON.parse(localStorage.getItem(lista));
 
-function salvarDados() {
-    localStorage.setItem(lista, JSON.stringify(arrayTarefas));
-}
+// function salvarDados() {
+//     localStorage.setItem(lista, JSON.stringify(arrayTarefas));
+// }
 
 function adicionarTarefa() {
     const textValue = inputText.value.trim();
@@ -19,7 +20,7 @@ function adicionarTarefa() {
         novaTarefa.status = false;
         arrayTarefas.unshift(novaTarefa);
         listarTarefas(arrayTarefas, lista);
-        salvarDados();
+        // salvarDados();
     }
 }
 
@@ -50,7 +51,7 @@ function removerTarefa(event) {
         const index = localEvento.id;
         arrayTarefas.splice(index, 1);
         listarTarefas(arrayTarefas, lista);
-        salvarDados();
+        // salvarDados();
     }
 }
 
