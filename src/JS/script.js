@@ -3,8 +3,6 @@ const button = document.querySelector("button");
 const lista = document.querySelector(".lista-tarefas");
 const qtd_tarefas = document.getElementById("quantidade_tarefas");
 
-button.addEventListener("click", adicionarTarefa);
-
 const arrayTarefas = JSON.parse(localStorage.getItem(lista));
 
 function salvarDados() {
@@ -17,7 +15,7 @@ function adicionarTarefa() {
         const novaTarefa = {};
         novaTarefa.nome = textValue;
         novaTarefa.status = false;
-        arrayTarefas.unshift(novaTarefa);
+        arrayTarefas.push(novaTarefa);
         listarTarefas(arrayTarefas, lista);
         salvarDados();
     }
@@ -61,6 +59,10 @@ function editarTarefa(event) {
     }
 }
 
+
+qtd_tarefas.innerText = `Quantidade de Tarefas: ${arrayTarefas.length}`;
+
+button.addEventListener("click", adicionarTarefa);
 lista.addEventListener("click", removerTarefa);
 lista.addEventListener("click", editarTarefa);
 
