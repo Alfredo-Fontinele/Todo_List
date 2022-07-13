@@ -18,6 +18,7 @@ function adicionarTarefa() {
         novaTarefa.status = false;
         arrayTarefas.push(novaTarefa);
         listarTarefas(arrayTarefas, lista);
+        inputText.value = "";
         // salvarDados();
     }
 }
@@ -37,7 +38,7 @@ function criarTemplate(tarefa, id) {
     li.innerHTML = `
         <img class='remover' id=${id} src="./src/imgs/lixeira.svg" alt="lixeira | logo">
         <h4>${tarefa.nome}</h4>
-        <img class='editar' id=${id} src="./src/imgs/lapis.png" alt="lapis | logo">
+        <img class='editar' id=${id} src="https://img.icons8.com/external-yogi-aprelliyanto-glyph-yogi-aprelliyanto/2x/external-pencil-brand-identity-yogi-aprelliyanto-glyph-yogi-aprelliyanto.png">
     `;
     li.classList.add("tarefa");
     return li;

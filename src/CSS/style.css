@@ -137,12 +137,16 @@ main {
 }
 
 .tarefa .remover:hover {
-    background-color: red;
+    filter: invert(12%) sepia(97%) saturate(4916%) hue-rotate(355deg) brightness(98%) contrast(110%);
+}
+
+.tarefa .editar {
+    width: 36px;
+    height: 36px;
 }
 
 .tarefa .editar:hover {
-    background-color: springgreen;
-    border-radius: 50%;
+    filter: invert(81%) sepia(32%) saturate(7214%) hue-rotate(111deg) brightness(103%) contrast(96%);
 }
 
 .tarefa h4 {
