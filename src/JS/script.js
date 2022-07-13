@@ -28,6 +28,7 @@ function listarTarefas(arrayTarefas, secao) {
         const template = criarTemplate(tarefa, i);
         secao.appendChild(template);
     }
+    qtd_tarefas.innerText = `Quantidade de Tarefas: ${arrayTarefas.length}`;
 }
 
 function criarTemplate(tarefa, id) {
