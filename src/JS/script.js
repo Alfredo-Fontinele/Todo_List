@@ -55,34 +55,39 @@ function removerTarefa(event) {
     }
 }
 
+let id = 0;
+
 function editarTarefa(event) {
     const section_alteracao = document.getElementById("section-alteracao");
     const alterar = document.getElementById("img-alterar-tarefa");
     const manter = document.getElementById("img-manter-tarefa");
     const localEvento = event.target;
-    
+
+    id = event.target.id;
+
     if (localEvento.classList.contains("editar")) {
         section_alteracao.style.display = "flex";
+        
         const input = document.getElementById("input-trocar-tarefa");
-        const index = localEvento.id;
 
-        alterar.addEventListener("click", () => {    
-            arrayTarefas[index].nome = input.value;
-
-            section_alteracao.style.display = "none";
+        alterar.addEventListener("click", () => {
+            arrayTarefas[id].nome = input.value;
             listarTarefas(arrayTarefas, lista);
+            section_alteracao.style.display = "none";
         })
 
         manter.addEventListener("click", () => {
             section_alteracao.style.display = "none";
         })
+
+        input.value = "";
     }
 }
 
 function limparTarefas(event) {
     const localEvento = event.target;
     if (localEvento.classList.contains("limpar_tarefas")) {
-        arrayTarefas = []
+        arrayTarefas = [];
         listarTarefas(arrayTarefas, lista);
     }
 }
