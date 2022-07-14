@@ -49,20 +49,37 @@ main {
     gap: 20px;
 } 
 
-.title p {
+.title-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-top p {
     color: #fff;
     font-weight: bold;
-    margin-bottom: 20px;
 }
 
-.title h2 {
-    text-align: center;
+.title-top .limpar_tarefas {
+    background-color: #e61f05;
+    border-radius: 10px;
+    font-weight: bold;
     color: #fff;
-    margin-bottom: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.5s;
 }
 
-.section-form .form {
+.title-top .limpar_tarefas:hover {
+    transform: scale(1.05);
+}
 
+.title-bottom h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+.section-form .form {
     display: flex;
     justify-content: space-between;
 }
@@ -154,4 +171,65 @@ main {
     text-align: left;
     width: 70%;
     word-wrap: break-word;
+}
+
+.section-alteracao {
+    background-color: rgba(20,30,40,0.7);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.alteracao-camp {
+    /* background-color: rgb(62, 42, 243); */
+    background-color: rgb(20,30,40);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 80px;
+}
+
+.alteracao-camp .alteracao-title h1 {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.alteracao-camp .alteracao-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.alteracao-camp .alteracao-check #input-trocar-tarefa {
+    padding-left: 10px;
+    border-radius: 10px;
+    height: 40px;
+    width: 350px;
+}
+
+.alteracao-camp .alteracao-check #img-alterar-tarefa {
+    height: 30px;
+    filter: invert(81%) sepia(32%) saturate(7214%) hue-rotate(111deg) brightness(103%) contrast(96%);
+    transition: all 0.5s;
+}
+
+.alteracao-camp .alteracao-check #img-manter-tarefa {
+    height: 30px;
+    filter: invert(12%) sepia(97%) saturate(4916%) hue-rotate(355deg) brightness(98%) contrast(110%);
+    transition: all 0.5s;
+}
+
+.alteracao-camp .alteracao-check #img-alterar-tarefa:hover,
+.alteracao-camp .alteracao-check #img-manter-tarefa:hover {
+    transform: scale(1.1);
 }

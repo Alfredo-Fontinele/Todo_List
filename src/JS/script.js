@@ -1,9 +1,10 @@
-const inputText = document.querySelector("input");
-const button = document.querySelector("button");
-const lista = document.querySelector(".lista-tarefas");
+const inputText = document.getElementById("pesquisa");
+const button = document.getElementById("adicionar-tarefa");
 const qtd_tarefas = document.getElementById("quantidade_tarefas");
+const lista = document.querySelector(".lista-tarefas");
+const section_form = document.querySelector(".section-form");
 
-const arrayTarefas = [];
+let arrayTarefas = [];
 // const arrayTarefas = JSON.parse(localStorage.getItem(lista));
 
 // function salvarDados() {
@@ -54,15 +55,45 @@ function removerTarefa(event) {
     }
 }
 
+// let texto = localEvento.closest("h4");
+// texto.innerText = "Olá";
+
 function editarTarefa(event) {
+    const section_alteracao = document.getElementById("section-alteracao");
+    const input = document.getElementById("input-trocar-tarefa");
+    const alterar = document.getElementById("img-alterar-tarefa");
+    const manter = document.getElementById("img-manter-tarefa");
+
     const localEvento = event.target;
+
     if (localEvento.classList.contains("editar")) {
-        console.log("Editar");
+        section_alteracao.style.display = "flex";
+
+        // const index = localEvento.id;
+
+        alterar.addEventListener("click", () => {
+            const valor = input.value;
+            console.log(valor);
+            section_alteracao.style.display = "none";
+        })
+
+        manter.addEventListener("click", () => {
+            section_alteracao.style.display = "none";
+        })
     }
 }
 
-button.addEventListener("click", adicionarTarefa);
-lista.addEventListener("click", removerTarefa);
-lista.addEventListener("click", editarTarefa);
+function limparTarefas(event) {
+    const localEvento = event.target;
+    if (localEvento.classList.contains("limpar_tarefas")) {
+        arrayTarefas = []
+        listarTarefas(arrayTarefas, lista);
+    }
+}
 
-listarTarefas(arrayTarefas, lista); 
+section_form.addEventListener("click", limparTarefas);
+button.addEventListener("click", adicionarTarefa);
+lista.addEventListener("click", editarTarefa);
+lista.addEventListener("click", removerTarefa);
+
+listarTarefas(arrayTarefas, lista);
