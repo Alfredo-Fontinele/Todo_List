@@ -221,12 +221,14 @@ main {
     height: 30px;
     filter: invert(81%) sepia(32%) saturate(7214%) hue-rotate(111deg) brightness(103%) contrast(96%);
     transition: all 0.5s;
+    cursor: pointer;
 }
 
 .alteracao-camp .alteracao-check #img-manter-tarefa {
     height: 30px;
     filter: invert(12%) sepia(97%) saturate(4916%) hue-rotate(355deg) brightness(98%) contrast(110%);
     transition: all 0.5s;
+    cursor: pointer;
 }
 
 .alteracao-camp .alteracao-check #img-alterar-tarefa:hover,

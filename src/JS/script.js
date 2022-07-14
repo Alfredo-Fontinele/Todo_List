@@ -38,7 +38,7 @@ function criarTemplate(tarefa, id) {
     const li = document.createElement("li");
     li.innerHTML = `
         <img class='remover' id=${id} src="./src/imgs/lixeira.svg" alt="lixeira | logo">
-        <h4>${tarefa.nome}</h4>
+        <h4 id='${id}'>${tarefa.nome}</h4>
         <img class='editar' id=${id} src="https://img.icons8.com/external-yogi-aprelliyanto-glyph-yogi-aprelliyanto/2x/external-pencil-brand-identity-yogi-aprelliyanto-glyph-yogi-aprelliyanto.png">
     `;
     li.classList.add("tarefa");
@@ -55,26 +55,22 @@ function removerTarefa(event) {
     }
 }
 
-// let texto = localEvento.closest("h4");
-// texto.innerText = "Olá";
-
 function editarTarefa(event) {
     const section_alteracao = document.getElementById("section-alteracao");
-    const input = document.getElementById("input-trocar-tarefa");
     const alterar = document.getElementById("img-alterar-tarefa");
     const manter = document.getElementById("img-manter-tarefa");
-
     const localEvento = event.target;
-
+    
     if (localEvento.classList.contains("editar")) {
         section_alteracao.style.display = "flex";
+        const input = document.getElementById("input-trocar-tarefa");
+        const index = localEvento.id;
 
-        // const index = localEvento.id;
+        alterar.addEventListener("click", () => {    
+            arrayTarefas[index].nome = input.value;
 
-        alterar.addEventListener("click", () => {
-            const valor = input.value;
-            console.log(valor);
             section_alteracao.style.display = "none";
+            listarTarefas(arrayTarefas, lista);
         })
 
         manter.addEventListener("click", () => {
