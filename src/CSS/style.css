@@ -61,7 +61,7 @@ main {
     font-weight: bold;
 }
 
-.title-top .limpar_tarefas {
+.title-top .limpar-tarefas {
     background-color: #e61f05;
     border-radius: 10px;
     font-weight: bold;
@@ -71,7 +71,7 @@ main {
     transition: all 0.5s;
 }
 
-.title-top .limpar_tarefas:hover {
+.title-top .limpar-tarefas:hover {
     transform: scale(1.05);
 }
 
@@ -139,8 +139,9 @@ main {
 }
 
 .tarefa:hover {
-    background-color: rgb(62, 42, 243);
-    box-shadow: 1px 1px 15px #05e69b;
+    /* background-color: rgb(62, 42, 243); */
+    background-color: rgb(20,30,40);
+    box-shadow: 1px 1px 15px #fff;
     transform: scale(1.01);
 }
 
@@ -196,8 +197,10 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    padding: 40px 80px;
+    width: 80%;
+    max-width: 800px;
+    gap: 20px;
+    padding: 40px 0;
 }
 
 .alteracao-camp .alteracao-title h1 {
@@ -207,6 +210,7 @@ main {
 }
 
 .alteracao-camp .alteracao-check {
+    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -217,7 +221,14 @@ main {
     padding-left: 10px;
     border-radius: 10px;
     height: 40px;
-    width: 350px;
+    width: 90%;
+}
+
+.imgs-button-tarefa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .alteracao-camp .alteracao-check #img-alterar-tarefa {
@@ -237,4 +248,22 @@ main {
 .alteracao-camp .alteracao-check #img-alterar-tarefa:hover,
 .alteracao-camp .alteracao-check #img-manter-tarefa:hover {
     transform: scale(1.1);
+}
+
+@media only screen and (max-width: 768px) {
+
+    .title-top {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .alteracao-check {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .imgs-button-tarefa {
+        margin-top: 20px;
+    }
+
 }

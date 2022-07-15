@@ -1,6 +1,6 @@
 const inputText = document.getElementById("pesquisa");
 const button = document.getElementById("adicionar-tarefa");
-const qtd_tarefas = document.getElementById("quantidade_tarefas");
+const qtd_tarefas = document.getElementById("quantidade-tarefas");
 const lista = document.querySelector(".lista-tarefas");
 const section_form = document.querySelector(".section-form");
 
@@ -67,18 +67,18 @@ function editarTarefa(event) {
 
     if (localEvento.classList.contains("editar")) {
         section_alteracao.style.display = "flex";
-        
+
         const input = document.getElementById("input-trocar-tarefa");
 
         alterar.addEventListener("click", () => {
             arrayTarefas[id].nome = input.value;
             listarTarefas(arrayTarefas, lista);
             section_alteracao.style.display = "none";
-        })
+        });
 
         manter.addEventListener("click", () => {
             section_alteracao.style.display = "none";
-        })
+        });
 
         input.value = "";
     }
@@ -86,7 +86,7 @@ function editarTarefa(event) {
 
 function limparTarefas(event) {
     const localEvento = event.target;
-    if (localEvento.classList.contains("limpar_tarefas")) {
+    if (localEvento.classList.contains("limpar-tarefas")) {
         arrayTarefas = [];
         listarTarefas(arrayTarefas, lista);
     }
