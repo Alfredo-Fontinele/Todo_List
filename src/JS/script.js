@@ -7,7 +7,7 @@ const section_form = document.querySelector(".section-form");
 let arrayTarefas = [];
 // const arrayTarefas = JSON.parse(localStorage.getItem(lista));
 
-// function salvarDados() {
+// function salvarAlteracoes() {
 //     localStorage.setItem(lista, JSON.stringify(arrayTarefas));
 // }
 
@@ -20,7 +20,7 @@ function adicionarTarefa() {
         arrayTarefas.push(novaTarefa);
         listarTarefas(arrayTarefas, lista);
         inputText.value = "";
-        // salvarDados();
+        // salvarAlteracoes();
     }
 }
 
@@ -51,7 +51,7 @@ function removerTarefa(event) {
         const index = localEvento.id;
         arrayTarefas.splice(index, 1);
         listarTarefas(arrayTarefas, lista);
-        // salvarDados();
+        // salvarAlteracoes();
     }
 }
 
@@ -62,24 +62,41 @@ function editarTarefa(event) {
     const alterar = document.getElementById("img-alterar-tarefa");
     const manter = document.getElementById("img-manter-tarefa");
     const localEvento = event.target;
-
     id = event.target.id;
-
     if (localEvento.classList.contains("editar")) {
         section_alteracao.style.display = "flex";
-
         const input = document.getElementById("input-trocar-tarefa");
-
         alterar.addEventListener("click", () => {
-            arrayTarefas[id].nome = input.value;
-            listarTarefas(arrayTarefas, lista);
-            section_alteracao.style.display = "none";
+            if (input.value.trim() !== "") {
+                arrayTarefas[id].nome = input.value;
+                listarTarefas(arrayTarefas, lista);
+                section_alteracao.style.display = "none";
+            } else {
+                const body = document.querySelector("body");
+                const section_alteracao = document.getElementById("section-alteracao");
+                const section = document.createElement("section");
+                body.append(section);
+                section.innerHTML = `
+                    <div class="camp-alert" id="camp-alert">
+                        <h2>Campo não pode estar vazio</h2>
+                        <img class="closed" id="closed" src="../imgs/manter_tarefa.svg" alt="botao | fechar">
+                    <div>
+                `
+                section.classList.add("section-alert");
+                const closed = document.querySelector(".closed");
+                closed.addEventListener("click", (event) => {
+                    let localEvento = event.target;
+                    if (localEvento.classList.contains("closed")) {
+                        console.log(localEvento);
+                        body.removeChild(section);
+                    }
+                    section.style.display = "none";
+                })
+            }
         });
-
         manter.addEventListener("click", () => {
             section_alteracao.style.display = "none";
         });
-
         input.value = "";
     }
 }

@@ -81,6 +81,11 @@ main {
     font-weight: bold;
     color: #fff;
 }
+
+.section-form {
+    max-width: 800px;
+}
+
 .section-form .form {
     display: flex;
     justify-content: space-between;
@@ -140,7 +145,7 @@ main {
 
 .tarefa:hover {
     /* background-color: rgb(62, 42, 243); */
-    background-color: rgb(20,30,40);
+    background-color: rgba(20,30,40,0.6);
     box-shadow: 1px 1px 15px #fff;
     transform: scale(1.01);
 }
@@ -190,8 +195,8 @@ main {
 }
 
 .alteracao-camp {
-    /* background-color: rgb(62, 42, 243); */
-    background-color: rgb(20,30,40);
+    background-color: rgb(62, 42, 243);
+    /* background-color: rgb(20,30,40); */
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -203,25 +208,26 @@ main {
     padding: 40px 0;
 }
 
-.alteracao-camp .alteracao-title h1 {
+.alteracao-title h1 {
     color: #fff;
     font-weight: bold;
     text-align: center;
 }
 
-.alteracao-camp .alteracao-check {
-    width: 70%;
+.alteracao-check {
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
 
-.alteracao-camp .alteracao-check #input-trocar-tarefa {
+ #input-trocar-tarefa {
     padding-left: 10px;
     border-radius: 10px;
+    margin: 10px;
     height: 40px;
-    width: 90%;
+    width: 80%;
 }
 
 .imgs-button-tarefa {
@@ -229,25 +235,68 @@ main {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    margin: 20px 10px;
 }
 
-.alteracao-camp .alteracao-check #img-alterar-tarefa {
+.alteracao-check #img-alterar-tarefa {
     height: 30px;
     filter: invert(81%) sepia(32%) saturate(7214%) hue-rotate(111deg) brightness(103%) contrast(96%);
     transition: all 0.5s;
     cursor: pointer;
 }
 
-.alteracao-camp .alteracao-check #img-manter-tarefa {
+.alteracao-check #img-manter-tarefa {
     height: 30px;
     filter: invert(12%) sepia(97%) saturate(4916%) hue-rotate(355deg) brightness(98%) contrast(110%);
     transition: all 0.5s;
     cursor: pointer;
 }
 
-.alteracao-camp .alteracao-check #img-alterar-tarefa:hover,
-.alteracao-camp .alteracao-check #img-manter-tarefa:hover {
+.alteracao-check #img-alterar-tarefa:hover,
+.alteracao-check #img-manter-tarefa:hover {
     transform: scale(1.1);
+}
+
+.section-alert {
+    background-color: rgba(20,30,40,0.7);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-alert .camp-alert {
+    background-color: rgb(62, 42, 243);
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.section-alert .camp-alert h2 {
+    width: 80%;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+
+.section-alert .camp-alert img {
+    height: 30px;
+    filter: invert(12%) sepia(97%) saturate(4916%) hue-rotate(355deg) brightness(98%) contrast(110%);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.section-alert .camp-alert img:hover {
+    transform: scale(1.03);   
 }
 
 @media only screen and (max-width: 768px) {
@@ -260,10 +309,6 @@ main {
     .alteracao-check {
         width: 100%;
         flex-direction: column;
-    }
-
-    .imgs-button-tarefa {
-        margin-top: 20px;
     }
 
 }
