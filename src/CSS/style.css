@@ -144,10 +144,15 @@ main {
 }
 
 .tarefa:hover {
-    /* background-color: rgb(62, 42, 243); */
-    background-color: rgba(20,30,40,0.6);
+    background-color: rgb(62, 42, 243);
+    /* background-color: rgba(20,30,40,0.6); */
     box-shadow: 1px 1px 15px #fff;
     transform: scale(1.01);
+}
+
+.tarefa:hover .remover,
+.tarefa:hover .editar{
+    filter: invert(100%) sepia(0%) saturate(7491%) hue-rotate(18deg) brightness(99%) contrast(105%);
 }
 
 .tarefa:hover h4 {
@@ -263,7 +268,7 @@ main {
     height: 100%;
     width: 100%;
     left: 0;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
