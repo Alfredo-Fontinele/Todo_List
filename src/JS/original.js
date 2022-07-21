@@ -15,22 +15,7 @@ let arrayTarefas = []
 const adicionarTarefa = () => {
     const textValue = inputText.value.trim()
     if (textValue == "") {
-        const section = document.createElement("section")   
-        section.style.display = "flex"
-        section.classList.add("section-alert-tarefa")
-        section.innerHTML = `
-            <div class="camp-alert-tarefa">
-                <h2>Campo de Tarefa não pode estar vazio</h2>
-                <img class="fechar" src="https://cdn-icons-png.flaticon.com/512/18/18297.png" alt="botao | fechar">
-            <div>
-        `
-        body.append(section)
-        section.addEventListener("click", (event) => {
-            const localEvento = event.target
-            if (localEvento.classList.contains("fechar")) {
-                section.style.display = "none"
-            }
-        })
+        alert("Digite algo")
     } else {
         const novaTarefa = {}
         novaTarefa.nome = textValue
@@ -157,7 +142,8 @@ const limparTarefas = (event) => {
                     arrayTarefas = []
                     listarTarefas(arrayTarefas, lista)
                     section.style.display = "none"
-                } else if (localEvento.classList.contains("fechar")) {
+                } 
+                else if (localEvento.classList.contains("fechar")) {
                     section.style.display = "none"
                 }
             })

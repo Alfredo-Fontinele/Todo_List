@@ -75,10 +75,8 @@ main {
     transform: scale(1.05);
 }
 
-/*  */
 
-
-.section-limpeza {
+.section-lista-vazia {
     background-color: rgba(20,30,40,0.7);
     position: absolute;
     height: 100%;
@@ -87,10 +85,10 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 20px;    
 }
 
-.section-limpeza .camp-limpeza {
+.section-lista-vazia .camp-lista-vazia {
     background-color: rgb(62, 42, 243);
     border-radius: 10px;
     display: flex;
@@ -102,20 +100,74 @@ main {
     width: 450px;
 }
 
-.section-limpeza .camp-limpeza h2 {
+.section-lista-vazia .camp-lista-vazia h2 {
     text-align: center;
     font-weight: bold;
     color: #fff;
 }
 
-.section-limpeza .confirmar-limpeza img {
+.section-lista-vazia .camp-lista-vazia img {
     width: 35px;
     height: 35px;
     cursor: pointer;
     transition: all 0.5s;
+    margin: 0 10px;
 }
 
-.section-limpeza .confirmar-limpeza img:hover {
+.section-alert-tarefa,
+.section-limpeza,
+.section-lista-vazia {
+    background-color: rgba(20,30,40,0.7);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.section-alert-tarefa .camp-alert-tarefa,
+.section-limpeza .camp-limpeza,
+.section-lista-vazia .camp-lista-vazia {
+    background-color: rgb(62, 42, 243);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    max-width: 650px;
+    width: 80%;
+}
+
+.section-alert-tarefa .camp-alert-tarefa,
+.section-limpeza .camp-limpeza,
+.section-lista-vazia .camp-lista-vazia h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+
+.section-alert-tarefa .camp-alert-tarefa img,
+.section-limpeza .confirmar-limpeza img,
+.section-lista-vazia .camp-lista-vazia img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin: 0 10px;
+}
+
+.section-alert-tarefa .camp-alert-tarefa img,
+.section-lista-vazia .camp-lista-vazia img {
+    filter: invert(12%) sepia(97%) saturate(4916%) hue-rotate(355deg) brightness(98%) contrast(110%);
+}
+
+.section-limpeza .confirmar-limpeza img:hover,
+.section-lista-vazia .camp-lista-vazia img:hover {
     transform: scale(1.02);
 }
 
@@ -127,7 +179,6 @@ main {
     filter: invert(12%) sepia(97%) saturate(4916%) hue-rotate(355deg) brightness(98%) contrast(110%);
 }
 
-/*  */
 
 .title-bottom h2 {
     margin: 20px 0;
@@ -255,7 +306,6 @@ main {
 
 .alteracao-camp {
     background-color: rgb(62, 42, 243);
-    /* background-color: rgb(20,30,40); */
     border-radius: 10px;
     display: flex;
     flex-direction: column;
