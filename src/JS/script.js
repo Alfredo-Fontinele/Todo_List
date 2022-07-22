@@ -1,4 +1,6 @@
 const body = document.querySelector("body")
+body.classList.add("animation-gradient")
+
 const inputText = document.getElementById("pesquisa")
 const button = document.getElementById("adicionar-tarefa")
 const qtd_tarefas = document.getElementById("quantidade-tarefas")
@@ -21,7 +23,7 @@ const adicionarTarefa = () => {
         section.innerHTML = `
             <div class="camp-alert-tarefa">
                 <h2>Campo de Tarefa não pode estar vazio</h2>
-                <img class="fechar" src="https://cdn-icons-png.flaticon.com/512/18/18297.png" alt="botao | fechar">
+                <img class="fechar" src="./src/imgs/alterar_tarefa.svg" alt="img | alterar tarefa">
             <div>
         `
         body.append(section)
@@ -77,6 +79,22 @@ let id = 0
 
 const editarTarefa = (event) => {
     const section_alteracao = document.getElementById("section-alteracao")
+
+    section_alteracao.innerHTML = `    
+        <div class="alteracao-camp">
+            <div class="alteracao-title">
+                <h1>Insira sua alteração</h1>
+            </div>
+            <div class="alteracao-check">
+                <input type="text" placeholder="Digite sua tarefa" id="input-trocar-tarefa">
+                <div class="imgs-button-tarefa">
+                    <img class="alterar-tarefa" id="img-alterar-tarefa" src="./src/imgs/manter_tarefa.svg" alt="img | manter tarefa">
+                    <img class="manter-tarefa" id="img-manter-tarefa" src="./src/imgs/alterar_tarefa.svg" alt="img | alterar tarefa">
+                </div>
+            </div>
+        </div>
+    `
+
     const alterar = document.getElementById("img-alterar-tarefa")
     const manter = document.getElementById("img-manter-tarefa")
     const localEvento = event.target
@@ -91,10 +109,10 @@ const editarTarefa = (event) => {
                 section.innerHTML = `
                     <div class="camp-alert">
                         <h2>Campo não pode estar vazio</h2>
-                        <img class="closed" src="https://cdn-icons-png.flaticon.com/512/18/18297.png" alt="botao | fechar">
+                        <img class="fechar" src="./src/imgs/alterar_tarefa.svg" alt="img | alterar tarefa">
                     <div>
                 `
-                const closed = document.querySelector(".closed")
+                const closed = document.querySelector(".fechar")
                 closed.addEventListener("click", (event) => {
                     let localEvento = event.target
                     if (localEvento.tagName == "IMG") {
@@ -124,7 +142,7 @@ const limparTarefas = (event) => {
             section.innerHTML = `
                 <div class="camp-lista-vazia">
                     <h2>A lista está vazia</h2>
-                    <img class="fechar" src="https://cdn-icons-png.flaticon.com/512/18/18297.png" alt="botao | fechar">
+                    <img class="fechar" src="./src/imgs/alterar_tarefa.svg" alt="img | alterar tarefa">
                 <div>
             `
             body.append(section)
@@ -145,7 +163,7 @@ const limparTarefas = (event) => {
                     <h2>Você tem certeza?</h2>
                     <div class="confirmar-limpeza">
                         <img class="confirmar" src="https://cdn-icons-png.flaticon.com/512/25/25179.png" alt="botao | confirmação">
-                        <img class="fechar" src="https://cdn-icons-png.flaticon.com/512/18/18297.png" alt="botao | fechar">
+                        <img class="fechar" src="./src/imgs/alterar_tarefa.svg" alt="img | alterar tarefa">
                     <div>
                 <div>
             `

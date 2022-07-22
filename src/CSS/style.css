@@ -19,14 +19,28 @@
     border-radius: 10px;
 }
 
-body {
-    background-image: url("https://static.vecteezy.com/system/resources/previews/002/099/719/original/mountain-beautiful-landscape-background-design-illustration-free-vector.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+.animation-gradient {
+    /* background-image: linear-gradient(45deg, #630bf023, #630bf023), url("https://static.vecteezy.com/system/resources/previews/002/099/719/original/mountain-beautiful-landscape-background-design-illustration-free-vector.jpg"); */
+    background: linear-gradient(50deg, #645bf0, #6711f1, #24af71, springgreen);
+    background-size: 300% 300%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    animation: colors 15s ease infinite;
+}
+
+@keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 main {
